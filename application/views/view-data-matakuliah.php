@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tampil data matakuliah</title>
+    <title>Tampil Data Matakuliah</title>
 </head>
+
 <body>
     <center>
         <table>
             <tr>
-                <th colspan="3">
-                    Tampil data mata Kuliah
-                </th>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <hr>
-                </td>
+               <th colspan="3">
+                Tampil Data Matakuliah
+                </th> 
             </tr>
             <tr>
                 <th>Kode MTK</th>
@@ -27,7 +20,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Nama Mtk</td>
+                <td>Nama MTK</td>
                 <td>:</td>
                 <td>
                     <?= $nama; ?>
@@ -35,18 +28,19 @@
             </tr>
             <tr>
                 <td>SKS</td>
-                <td>:</td>
+                <td>:</>
                 <td>
                     <?= $sks; ?>
                 </td>
             </tr>
-            <tr>
-                <td colspan="3"> align="center">
-                <a href="<?= base_url('matakuliah'); 
-?>">Kembali</a>
-</td>           
+            <tr> 
+                <td colspan="3" align="center">
+                    <a href="<?= base_url('Matakuliah');
+?>">kembali</a>
+                </td>
             </tr>
         </table>
     </center>
 </body>
+
 </html>

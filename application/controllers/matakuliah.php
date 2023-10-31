@@ -1,17 +1,37 @@
 <?php
-class matakuliah extends CI_Controller
+class Matakuliah extends CI_controller
 {
-    public fucntion index()
+    public function index()
+
     {
         $this->load->view('view-form-matakuliah');
     }
+
     public function cetak()
     {
-        $data = [
-            'kode' => $this->input->post('kode'),
-            'nama' => $this->input->post('nama'),
-            'sks' => $this->input->post('sks')
-        ];
-        $this->load->view('view-data-matakuliah', $data);
+        $this->form_validation->set_rules('kode', 'kode matakuliah',
+        'required|min_length[3]', [
+            'required' => 'Kode Matakuliah Harus Diisi',
+            'min_length' => 'Kode Terlalu Pendek'
+        ]);
+
+        $this->form_validation->set_rules('nama', 'Nama Matakuliah',
+        'required|min_length[3]', [
+            'required' => 'Nama Matakuliah Harus Diisi',
+            'min_length' => 'Nama Terlalu Pendek'
+        ]);
+
+        if ($this->form_validation->run() != true) {
+            $this->load->view('view-form-matakuliah');
+        } else {
+            $data = [
+                'kode' => $this->input->post('kode'),
+                'nama' => $this-> input->post('nama'),
+                'sks' => $this->input->post('sks')
+            ];
+
+            $this->load->view('view-data-matakuliah', $data);
+        }
+            
     }
 }
